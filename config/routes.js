@@ -39,6 +39,11 @@ module.exports.routes = {
   'get /views/:file': {
     controller: 'Loadparical',
     action: 'sendParical'
+  },
+  // Angularjs parcials
+  'get /data/request': {
+    controller: 'Loadparical',
+    action: 'getURlRequest'
   }
 
   /***************************************************************************
