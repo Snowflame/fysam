@@ -8,16 +8,45 @@ module.exports = {
 
   		var self = this;
 
-		Network.find({type:"spotify"}).exec(function (err, networks){
+		Network.find().exec(function (err, networks){
 
 			if(err)
 				res.send(err);
 			else{
 				for(i in networks){
-					self.updateSpotifyPosts(req, res, networks[i]);
+					var network = networks[i];
+					if (network.type == "spotify") {
+						self.updateSpotifyPosts(req, res, network);
+					} else if (network.type == "twitter") {
+						self.updateTwitterPosts(req, res, network);
+					}
 				}
 			}
 		});
+  	},
+
+  	updateTwitterPosts: function(req, res, network) {
+  		var self = this;
+  		var Twitter = require('node-twitter');
+
+  		var twitterSearchClient = new Twitter.SearchClient({
+			consumer_key: 'ZyjB5qU2YFLGko1dYXnNesC92',
+			consumer_secret: 'Y1MtuzK0QgiwgUyjbOtwYyD1HdvoSZeJ6CR5ONhIX4F2L93DGD',
+			access_token_key: '3353738554-CBGs7S3u3mGixeD20X4CdxJ9qK9dcPGxPtJP38y',
+			access_token_secret: 'HKSyeuGkGNQeKw0KR36fa4TTPqhUtHpAUp8R93jYLlV2L'
+		});
+
+		twitterSearchClient.search({'q': 'node.js'}, function(error, result) {
+    if (error)
+    {
+        console.log('Error: ' + (error.code ? error.code + ' ' + error.message : error.message));
+    }
+
+    if (result)
+    {
+        console.log(result);
+    }
+});
   	},
 
   	updateSpotifyPosts: function(req, res, network) {
