@@ -46,7 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-      <a class="navbar-brand" href="#">Fasan</a>
+      <a class="navbar-brand" href="#">Fysam</a>
 </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -56,12 +56,27 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-    <div splashscree></div>
-    <div growl></div>
     <div class="container-fluid">
-      <div ng-view></div>
+    <div class="row">
+      <div class="col-xs-12">
+      <div class="intro">
+          <p>Hello Viktor, ... .. ..... </p>
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control searchicon" placeholder="Auf Fysam suchen...">
+      </div><!-- /input-group -->
+      <ul class="tabselection">
+      <li>Top Stars</li>
+      </ul>
+      <div splashscreen></div>
+      <div growl></div>
+      </div>
+      </div>
     </div>
+
+    <div class="container-fluid">
+        <div ng-view></div>
+      </div>
     <!--
         Client-side Templates
         ========================
@@ -120,24 +135,8 @@
     <script src="/js/dependencies/ui-bootstrap-tpls.js"></script>
     <script src="/js/dependencies/angular-translate.js"></script>
     <script src="/app/app.js"></script>
-    <script src="/app/controllers/layout/editLayout.js"></script>
-    <script src="/app/controllers/layout/layoutController.js"></script>
-    <script src="/app/controllers/layout/modal/assetManager.js"></script>
-    <script src="/app/controllers/layout/modal/createLayout.js"></script>
-    <script src="/app/controllers/layout/modal/editLayout.js"></script>
-    <script src="/app/controllers/layout/navbar.js"></script>
-    <script src="/app/controllers/layout/splashscreen.js"></script>
-    <script src="/app/controllers/star/editLayout.js"></script>
-    <script src="/app/controllers/star/layoutController.js"></script>
     <script src="/app/controllers/star/showStarController.js"></script>
     <script src="/app/controllers/star/starController.js"></script>
-    <script src="/app/directives/onLastRepeat.js"></script>
-    <script src="/app/directives/setListner.js"></script>
-    <script src="/app/directives/validate.form.js"></script>
-    <script src="/app/models/Column.js"></script>
-    <script src="/app/services/dataformatService.js"></script>
-    <script src="/app/services/layout/layoutService.js"></script>
-    <script src="/app/services/star/layoutService.js"></script>
     <script src="/app/services/star/starService.js"></script>
     <!--SCRIPTS END-->
   </body>

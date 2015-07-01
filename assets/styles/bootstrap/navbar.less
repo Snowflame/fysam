@@ -29,6 +29,8 @@
 // styling of responsive aspects.
 
 .navbar-header {
+  background-color:transparent;
+  text-align:center;
   &:extend(.clearfix all);
 
   @media (min-width: @grid-float-breakpoint) {
@@ -162,10 +164,10 @@
 // Brand/project name
 
 .navbar-brand {
-  float: left;
+  
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
   font-size: @font-size-large;
-  line-height: @line-height-computed;
+  line-height: @navbar-height;
   height: @navbar-height;
 
   &:hover,
