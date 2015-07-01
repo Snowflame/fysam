@@ -35,10 +35,9 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  // Angularjs parcials
-  'get /views/:file': {
-    controller: 'Loadparical',
-    action: 'sendParical'
+  'get /updatePool' : {
+    controller: 'post',
+    action: 'updatePool'
   }
 
   /***************************************************************************

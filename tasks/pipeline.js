@@ -24,22 +24,16 @@ var cssFilesToInject = [
 var jsFilesToInject = [
   
   // Load sails.io before everything else
-  'js/dependencies/jquery-1.11.1.js',
   'js/dependencies/sails.io.js',
-  'js/dependencies/angular.js',
-  'js/dependencies/angular-route.js',
-  'js/dependencies/ui-bootstrap.js',
-  'js/dependencies/ui-bootstrap-tpls.js',
-  'js/dependencies/angular-translate.js',
 
-  //'js/dependencies/**/*.js',
-  'app/app.js',
-  'app/**/*.js'
+  // Dependencies like jQuery, or Angular are brought in here
+  'js/dependencies/**/*.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  //'js/**/*.js'
+  'js/**/*.js'
 ];
+
 
 // Client-side HTML templates are injected using the sources below
 // The ordering of these templates shouldn't matter.
@@ -68,4 +62,3 @@ module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
 module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
   return 'assets/' + path;
 });
-

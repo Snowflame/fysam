@@ -1,5 +1,5 @@
 {
-  "name": "hackit",
+  "name": "fysan",
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
@@ -21,7 +21,8 @@
     "include-all": "~0.1.3",
     "rc": "~0.5.0",
     "sails": "~0.11.0",
-    "sails-disk": "~0.10.0"
+    "sails-disk": "~0.10.0",
+    "spotify-web-api-node": "^2.0.2"
   },
   "scripts": {
     "debug": "node debug app.js",
@@ -30,8 +31,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mborkows/hackit.git"
+    "url": "git://github.com/javier.pena/fysan.git"
   },
-  "author": "mborkows",
+  "author": "javier.pena",
   "license": ""
 }
