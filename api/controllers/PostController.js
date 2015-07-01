@@ -35,7 +35,10 @@ module.exports = {
 			access_token_key: '3353738554-CBGs7S3u3mGixeD20X4CdxJ9qK9dcPGxPtJP38y',
 			access_token_secret: 'HKSyeuGkGNQeKw0KR36fa4TTPqhUtHpAUp8R93jYLlV2L'
 		});
-		client.get('search/tweets', {q: 'from%3ARihanna'}, function(error, tweets, response){
+
+		var query = 'from%3A' + network.artistId;
+		client.get('search/tweets', {q: query}, function(error, tweets, response){
+			console.log('here');
 			var statuses = tweets.statuses;
 			for (i in statuses) {
 				var status = statuses[i];
@@ -43,8 +46,8 @@ module.exports = {
 					var url = 'https://twitter.com/' + status.user.screen_name + '/status/' + status.id_str;
 					self.savePost(status.id_str, status.created_at, url, network);
 				}
-					
 			}
+    		return res.send("Hi there!");
 		});
   	},
 
