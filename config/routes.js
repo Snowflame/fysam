@@ -41,9 +41,13 @@ module.exports.routes = {
     action: 'sendParical'
   },
   // Angularjs parcials
-  'get /data/request': {
+  'get /data/request/:letter': {
     controller: 'Loadparical',
     action: 'getURlRequest'
+  },
+  'get /updatePool' : {
+    controller: 'post',
+    action: 'updatePool'
   }
 
   /***************************************************************************
