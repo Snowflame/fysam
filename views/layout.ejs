@@ -34,6 +34,7 @@
   </head>
 
   <body ng-app="fysamAPP">
+  <div ng-controller="NavigationCtrl" ng-class="{ overview: isCurrentPath('/star')}">
   <div class="bgimage"><div class="gradient"></div></div>
 
     <nav class="navbar navbar-default" role="navigation">
@@ -51,7 +52,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/#/layout">Settings</a></li>
+            <li><a href="/#/layout">{{activeview}}</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -68,7 +69,8 @@
 
     <div class="container-fluid">
         <div ng-view></div>
-      </div>
+    </div>
+  </div>
     <!--
         Client-side Templates
         ========================
@@ -129,6 +131,7 @@
     <script src="/app/app.js"></script>
     <script src="/app/controllers/star/showStarController.js"></script>
     <script src="/app/controllers/star/starController.js"></script>
+    <script src="/app/directives/NavigationCtrl.js"></script>
     <script src="/app/services/star/starService.js"></script>
     <!--SCRIPTS END-->
   </body>
