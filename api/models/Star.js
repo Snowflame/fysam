@@ -15,8 +15,8 @@ module.exports = {
     proffession: {
     	type: 'string'
     },
-    single: {
-        type: 'boolean'
+    familystatus: {
+        type: 'string'
     },
     imageUrl: {
        type: 'string'

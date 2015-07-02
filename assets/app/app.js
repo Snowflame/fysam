@@ -29,4 +29,3 @@ app.constant("APPDIR", "http://127.0.0.1:1337/js/app");
 app.constant("APIDIR", "http://127.0.0.1:1337/api/v1/");
 app.constant("PARCIALFORMAT", "");
 app.constant("PARCIALDIR", "http://127.0.0.1:1337");
-
