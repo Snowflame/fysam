@@ -19,9 +19,54 @@ module.exports = {
 						self.updateSpotifyPosts(req, res, network);
 					} else if (network.type == "twitter") {
 						self.updateTwitterPosts(req, res, network);
+					} else if (network.type == "youtube") {
+						self.updateYoutubePosts(req, res, network);
 					}
 				}
     			//res.send("Hi there!");
+			}
+		});
+  	},
+
+  	updateYoutubePosts: function(req, res, network) {
+  		var self = this;
+		var Youtube = require("youtube-api");
+
+		// Authenticate using an access token 
+		Youtube.authenticate({
+			type: "oauth",
+			token: "ya29.pAGUd1BjVQs4Yzvj9sXedDRqp1yT4rlKK6CWTTW2eV8xkU81VGmPZ07MelVZC2dlb0QJNqNGs6OJqQ"
+		});
+		// List your subcribers 
+		Youtube.channels.list({
+			"part": "id, contentDetails",
+			"forUsername": "rihanna"
+		}, function (err, data) {
+			if (err) {
+				console.log(err);
+				res.send(err);
+			} else {
+				var items = data.items;
+				for (i in items) {
+					var uploads = items[i].contentDetails.relatedPlaylists.uploads;
+					Youtube.playlistItems.list({
+						"part": "snippet, contentDetails",
+						"resultsPerPage": 100,
+						"playlistId": uploads
+					}, function (err, data) {
+						if (err) {
+							console.log(err);
+							res.send(err);
+						} else {
+							var items = data.items;
+							for (i in items) {
+								var url = 'https://www.youtube.com/watch?v=' + items[i].contentDetails.videoId;
+								self.savePost(items[i].contentDetails.videoId, items[i].snippet.publishedAt, url, network, req.param('starid'));
+							}
+							console.log(data);
+						}
+					});
+				}
 			}
 		});
   	},
