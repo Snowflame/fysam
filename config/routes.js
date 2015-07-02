@@ -38,6 +38,7 @@ module.exports.routes = {
   'get /updatePool' : {
     controller: 'post',
     action: 'updatePool'
+  },
   // Angularjs parcials
   'get /views/:file': {
     controller: 'Loadparical',
