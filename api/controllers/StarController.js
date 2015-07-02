@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+	getPosts: function(req, res, network) {
+		Post.find({star:req.param('star')}).exec(function(err, data){
+			if(!err){
+				res.send(data);
+			}
+		})
+  	}
 };
 

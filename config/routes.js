@@ -45,9 +45,13 @@ module.exports.routes = {
     controller: 'Loadparical',
     action: 'getURlRequest'
   },
-  'get /updatePool' : {
+  'get /updatePool/:starid' : {
     controller: 'post',
     action: 'updatePool'
+  },
+  'get /api/v1/star/getposts/:star' : {
+    controller: 'star',
+    action: 'getPosts'
   }
 
   /***************************************************************************

@@ -10,6 +10,9 @@ app.controller('showStarController', function ($scope, $compile, $routeParams, $
             starService.starinfo($scope.star.id, function(data){
                 $scope.star = data;
             });
+            starService.getposts($scope.star.id, function(data){
+                $scope.posts = data;
+            });
             
         } else {
             $location.path('/star');

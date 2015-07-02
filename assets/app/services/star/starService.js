@@ -12,9 +12,16 @@ app.service('starService', function ($rootScope, $http, APIDIR) {
     function starinfo(id, callback){
       $http({ 
             url: APIDIR+'star/'+id,
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            data: {"name":name}
+            method: 'GET'
+      }).success(function (data) {
+          callback(data);
+      });
+    }
+
+    function getposts(id, callback){
+      $http({ 
+            url: APIDIR+'star/getposts/'+id,
+            method: 'GET'
       }).success(function (data) {
           callback(data);
       });
@@ -26,6 +33,9 @@ app.service('starService', function ($rootScope, $http, APIDIR) {
       },
       starinfo: function(id, callback){
         starinfo(id, callback);
+      },
+      getposts: function(id, callback){
+        getposts(id, callback);
       }
     };
 });
