@@ -10,9 +10,9 @@ app.controller('showStarController', function ($scope, $compile, $routeParams, $
             starService.starinfo($scope.star.id, function(data){
                 $scope.star = data;
                 setBackground();
-            });
-            starService.getposts($scope.star.id, function(data){
-                $scope.posts = data.posts;
+                starService.getposts($scope.star.id, function(data){
+                    $scope.posts = data.posts;
+                });
             });
             
         } else {

@@ -71,6 +71,7 @@ module.exports = {
 		  }
 
 		});
+	},
 		getURlRequest: function (req, res){
 		var request = require('request');
 
