@@ -9,6 +9,7 @@ app.controller('showStarController', function ($scope, $compile, $routeParams, $
             $scope.star.id = $routeParams.starID;
             starService.starinfo($scope.star.id, function(data){
                 $scope.star = data;
+                setBackground();
             });
             starService.getposts($scope.star.id, function(data){
                 $scope.posts = data;
@@ -17,6 +18,10 @@ app.controller('showStarController', function ($scope, $compile, $routeParams, $
         } else {
             $location.path('/star');
         }
+    }
+
+    function setBackground(){
+        $(".bgimage").css("background-image","url(http://img.celepedia.de/celepedia/rest/pictures/download/"+$scope.star.imgid+"?profile=SQUARE_300_2)");
     }
 
     init();
