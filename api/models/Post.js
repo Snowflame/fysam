@@ -12,9 +12,6 @@ module.exports = {
     owner: {
       model: 'network'
     },
-    star: {
-      model: 'star'
-    },
     postid: {
       type: 'string'
     }

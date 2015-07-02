@@ -12,7 +12,7 @@ app.controller('showStarController', function ($scope, $compile, $routeParams, $
                 setBackground();
             });
             starService.getposts($scope.star.id, function(data){
-                $scope.posts = data;
+                $scope.posts = data.posts;
             });
             
         } else {

@@ -11,7 +11,7 @@ module.exports = {
 		Network.find().exec(function (err, networks){
 
 			if(err)
-				res.send(err);
+			    console.error(err);
 			else{
 				for(i in networks){
 					var network = networks[i];
@@ -21,7 +21,7 @@ module.exports = {
 						self.updateTwitterPosts(req, res, network);
 					}
 				}
-    			res.send("Hi there!");
+    			//res.send("Hi there!");
 			}
 		});
   	},
@@ -39,13 +39,12 @@ module.exports = {
 
 		var query = 'from%3A' + network.artistId;
 		client.get('search/tweets', {q: query, count:150}, function(error, tweets, response){
-			console.log('here');
 			var statuses = tweets.statuses;
 			for (i in statuses) {
 				var status = statuses[i];
 				if(status.retweeted_status == undefined) {
 					var url = 'https://twitter.com/' + status.user.screen_name + '/status/' + status.id_str;
-					self.savePost(status.id_str, status.created_at, url, network, req.param('starid'));
+					self.savePost(status.id_str, status.created_at, url, network);
 				}
 			}
 		});
@@ -62,7 +61,7 @@ module.exports = {
 					var items = data.body.items;
 					for (i in items) {
 						var item = items[i];
-						self.savePost(item.postid, new Date(), item.external_urls.spotify, network, req.param('starid'));
+						self.savePost(item.postid, new Date(), item.external_urls.spotify, network);
 					}
 				}
 
@@ -72,23 +71,17 @@ module.exports = {
 		);
   	},
 
-  	savePost: function(postId, date, url, network, starid) {
+  	savePost: function(postId, date, url, network) {
 		var post = Post.find({postid:postId}).exec(function (err, post){
 			if(err)
-				res.send(err);
+			    console.error(err);
 			else if (post.length == 0) {
 				Post.create({
 					postid: postId,
 					date: date,
 					url: url,
-					star: starid,
 					owner: network.id
 				}).exec(function (err, created){
-					if (err) {
-						console.log(err);
-					} else {
-						console.log(created);
-					}
 				});
 			}
 		});

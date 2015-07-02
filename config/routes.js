@@ -52,6 +52,10 @@ module.exports.routes = {
   'get /api/v1/star/getposts/:star' : {
     controller: 'star',
     action: 'getPosts'
+  },
+  'get /data/twitter' : {
+    controller: 'star',
+    action: 'getTwitter'
   }
 
   /***************************************************************************
