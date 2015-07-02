@@ -62,7 +62,7 @@ module.exports = {
 					var items = data.body.items;
 					for (i in items) {
 						var item = items[i];
-						self.savePost(item.postid, new Date(), item.external_urls.spotify, network);
+						self.savePost(item.postid, new Date(), item.external_urls.spotify, network, req.param('starid'));
 					}
 				}
 
