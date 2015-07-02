@@ -38,6 +38,41 @@
 
 
 
+  <div ng-controller="NavigationCtrl" ng-class="{ overview: isCurrentPath('/star')}">
+  <div class="bgimage"><div class="gradient"></div></div>
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            
+          </button>
+      <a class="navbar-brand" href="#/star/">Fysam</a>
+       <a href="#/star/" type="button" id="backbutton" class="navbar-toggle"></a>
+</div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/#/layout">{{activeview}}</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+    
+      <div splashscreen></div>
+      <div growl></div>
+      </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+        <div ng-view></div>
+    </div>
+  </div>
     <!--
         Client-side Templates
         ========================
@@ -89,6 +124,16 @@
 
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/angular.js"></script>
+    <script src="/js/dependencies/angular-route.js"></script>
+    <script src="/js/dependencies/ui-bootstrap.js"></script>
+    <script src="/js/dependencies/ui-bootstrap-tpls.js"></script>
+    <script src="/js/dependencies/angular-translate.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/star/showStarController.js"></script>
+    <script src="/app/controllers/star/starController.js"></script>
+    <script src="/app/directives/NavigationCtrl.js"></script>
+    <script src="/app/services/star/starService.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

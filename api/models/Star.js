@@ -1,5 +1,8 @@
 module.exports = {
   attributes: {
+  	imgid: {
+  		type: 'string'  		
+  	},
     nickname: {
       type: 'string'
     },
@@ -12,8 +15,8 @@ module.exports = {
     proffession: {
     	type: 'string'
     },
-    single: {
-        type: 'boolean'
+    familystatus: {
+        type: 'string'
     },
     imageUrl: {
        type: 'string'
@@ -25,6 +28,10 @@ module.exports = {
     networks: {
     	collection: 'network',
     	via: 'owner'
+    },
+    posts: {
+      collection: 'post',
+      via: 'star'
     }
   }
 }

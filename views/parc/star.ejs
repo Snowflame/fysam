@@ -1,0 +1,31 @@
+
+
+
+<div class="row detailpage" ng-init="followed=false">
+
+
+  <div class="subscribecontainer col-xs-12 col-md-4">
+
+  <h1>{{star.nickname}}</h1>
+  <h1>{{star.imgid}}</h1>
+  <h1>{{star.birth}}</h1>
+  <h1>{{star.description}}</h1>
+  <h1>{{star.proffession}}</h1>
+  <h1>{{star.familystatus }}</h1>
+            <div class="thankyou" ng-click="followed=!followed" ng-class="{hidden: !followed}"><div class="subscribed"></div></div>
+
+      <div class="subscribebutton" ng-click="followed=!followed"></div>
+      <div class="caption">
+
+        <p class="biography">Introtext zum Subscriben steht hier, schön lang und irgendiwe doch kurz.</p>
+      </div>
+</div>
+</div>	
+
+<div ng-repeat="post in posts">{{post.date | date}} | {{post.url}}</div>
+<a href="http://www.lifebuzz.com/chris-walks/">Man Walks Nearly 3000 Miles Through China. His Before & After Photos Will Shock You.</a>
+<a class="embedly-card" href="http://www.lifebuzz.com/chris-walks/">Man Walks Nearly 3000 Miles Through China. His Before & After Photos Will Shock You.</a>
+
+    <a class="embedly-card" href="https://twitter.com/rihanna/status/614189589914234880">Rihanna on Twitter</a>
+<script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+    </div>

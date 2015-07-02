@@ -38,6 +38,23 @@ module.exports.routes = {
   'get /updatePool' : {
     controller: 'post',
     action: 'updatePool'
+  // Angularjs parcials
+  'get /views/:file': {
+    controller: 'Loadparical',
+    action: 'sendParical'
+  },
+  // Angularjs parcials
+  'get /data/request/:letter': {
+    controller: 'Loadparical',
+    action: 'getURlRequest'
+  },
+  'get /updatePool/:starid' : {
+    controller: 'post',
+    action: 'updatePool'
+  },
+  'get /api/v1/star/getposts/:star' : {
+    controller: 'star',
+    action: 'getPosts'
   }
 
   /***************************************************************************
