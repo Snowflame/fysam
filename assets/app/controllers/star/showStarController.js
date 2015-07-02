@@ -1,18 +1,22 @@
 app.controller('showStarController', function ($scope, $compile, $routeParams, $translate, $location, $modal, starService, APPDIR, PARCIALFORMAT, PARCIALDIR) {
 
-    $scope.star = {nickname:'', id: null, imgid: null, birth: null, description: null, proffession: null, familystatus:null};
+    $scope.star = {nickname:'' , id: $routeParams.starID, imgid: null, birth: null, description: null, proffession: null, familystatus:null};
     $scope.showDestroy=false;
     $scope.posts = [];
 
     function init() {
         if(typeof $routeParams.starID != "undefined"){
             $scope.star.id = $routeParams.starID;
+
             starService.starinfo($scope.star.id, function(data){
-                $scope.star = data;
-                setBackground();
-                starService.getposts($scope.star.id, function(data){
-                    $scope.posts = data.posts;
-                });
+                    $scope.star = data;
+                    setBackground();
+                    console.log($scope.star.id);
+
+                    starService.getposts($scope.star.id, function(data){
+                        $scope.posts = [];
+                        $scope.posts = data.posts;
+                    });
             });
             
         } else {

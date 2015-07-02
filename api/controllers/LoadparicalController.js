@@ -72,10 +72,10 @@ module.exports = {
 
 		});
 	},
-		getURlRequest: function (req, res){
+	getriri: function (req, res){
 		var request = require('request');
 
-		request('http://www.celepedia.de/celepedia/rest/stars/name/letter/'+req.param('letter')+'?limit=50', function (error, response, body) {
+		request('http://www.celepedia.de/celepedia/rest/stars/star/slug/rihanna-02', function (error, response, body) {
 		  if (!error && response.statusCode == 200) {
 		  	var data = JSON.parse(body);
 

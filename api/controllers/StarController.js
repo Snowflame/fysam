@@ -41,7 +41,7 @@ module.exports = {
 		});
 
 
-  	},
+  	}, 
   	saveNetwork: function(star, network, artistId, name){
   		Network.create({owner:star, type: network, artistId: artistId, name: name}).exec(function(err, data){
   		});
