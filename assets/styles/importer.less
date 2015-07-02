@@ -95,10 +95,10 @@ body {
   border-bottom:1px solid white;
   text-transform:uppercase;
  }
- .overviewcard {
+ .detailpage {
   position:relative;
     h1 {
-      position: absolute;
+      /*position: absolute;*/
       left: 10px;
       bottom: 10px;
     color: #fff;
@@ -131,4 +131,52 @@ body {
       height: 100%;
   width: 100%;
   }
+ }
+ .detailpage .subscribecontainer {
+  border:none;
+  position:relative;
+  .thankyou {
+    background-color:rgba(0,0,0,.7);
+  position:absolute;
+top:0;
+width:100%;
+left:0;
+  .subscribed {
+  
+  width: 340px;
+  height: 148px;
+  margin: 0 auto;
+  border: none;
+  background-image: url("/images/sprite.png");
+  background-position: -10px -386px;
+  background-repeat: no-repeat;
+  background-size: 400px 1000px;
+  }
+  }
+  background-color:#000;
+  .biography {
+    color:#fff;
+    margin-top:10px;
+    margin-bottom:50px;
+    text-align: center;
+    font-size:13px;
+  }
+  .subscribebutton {
+    margin-bottom:20px;
+  width: 340px;
+  height: 39px;
+  cursor: pointer;
+  margin:0 auto;
+  background-image: url("/images/sprite.png");
+  background-position: -10px -271px;
+  background-repeat: no-repeat;
+  background-size: 400px 1000px;
+  &:hover {
+
+background-position:-10px -328px;
+
+
+  }
+  }
+  
  }
