@@ -39,7 +39,7 @@
 
 
   <div ng-controller="NavigationCtrl" ng-class="{ overview: isCurrentPath('/star')}">
-  <div class="bgimage"><div class="gradient"></div></div>
+  <div class="bgimage" ng-class="{{star.nickname}}"><div class="gradient"></div></div>
 
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">

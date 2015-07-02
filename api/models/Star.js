@@ -28,10 +28,6 @@ module.exports = {
     networks: {
     	collection: 'network',
     	via: 'owner'
-    },
-    posts: {
-      collection: 'post',
-      via: 'star'
     }
   }
 }
