@@ -34,7 +34,7 @@ module.exports = {
 		// Authenticate using an access token 
 		Youtube.authenticate({
 			type: "oauth",
-			token: "ya29.pAEYrkfQP6g7ojFMN-Ujxec9F_8JvZpD8UfNXbXO2hPCQJCfC5iAH0w1HTqgVblat8J3lZwrV4zp_g"
+			token: "ya29.pAGUd1BjVQs4Yzvj9sXedDRqp1yT4rlKK6CWTTW2eV8xkU81VGmPZ07MelVZC2dlb0QJNqNGs6OJqQ"
 		});
 		// List your subcribers 
 		Youtube.channels.list({
