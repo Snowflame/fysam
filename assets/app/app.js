@@ -13,6 +13,10 @@ app.config(function ($routeProvider) {
               controller: 'showStarController',
               templateUrl: '/views/star'
           })
+      .when('/show/ria', 
+          {
+              templateUrl: '/views/show'
+          })
       .otherwise({ redirectTo: '/star' });
 });
 
