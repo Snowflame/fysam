@@ -3,7 +3,7 @@ app.controller('starController', function ($scope, $modal, $location, starServic
     $scope.loadStars = {loading: true};
 
     function init() { 
-        starService.listLayout(function(data){
+        starService.listStars(function(data){
             $scope.loadStars.loading = false;
             $scope.stars = data;
         });

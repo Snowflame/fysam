@@ -4,9 +4,14 @@
 <div class="row detailpage" ng-init="followed=false">
 
 
-
   <div class="subscribecontainer col-xs-12 col-md-4">
-      <h1>{{star.name}}Rihanna</h1>
+
+  <h1>{{star.nickname}}</h1>
+  <h1>{{star.imgid}}</h1>
+  <h1>{{star.birth}}</h1>
+  <h1>{{star.description}}</h1>
+  <h1>{{star.proffession}}</h1>
+  <h1>{{star.familystatus }}</h1>
             <div class="thankyou" ng-click="followed=!followed" ng-class="{hidden: !followed}"><div class="subscribed"></div></div>
 
       <div class="subscribebutton" ng-click="followed=!followed"></div>
