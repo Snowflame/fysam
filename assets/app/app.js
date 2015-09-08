@@ -1,6 +1,8 @@
 ﻿var app = angular.module('fysamAPP', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate']);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider,$locationProvider) {
+  $locationProvider.html5Mode({enabled:true,  requireBase: true});
+      $locationProvider.hashPrefix('!');
 
   $routeProvider
       .when('/star',

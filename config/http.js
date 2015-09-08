@@ -21,7 +21,7 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-  // middleware: {
+   middleware: {
 
   /***************************************************************************
   *                                                                          *
@@ -30,6 +30,26 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
+    prerender: require('prerender-node').set('prerenderServiceUrl', 'http://localhost:3000/').set('prerenderToken', 'YOUR_TOKEN'),
+     order: [
+       'startRequestTimer',
+       'cookieParser',
+       'session',
+       'myRequestLogger',
+       'bodyParser',
+       'handleBodyParserError',
+       'prerender',
+       'compress',
+       'methodOverride',
+       'poweredBy',
+       '$custom',
+       'router',
+       'www',
+       'favicon',
+       '404',
+       '500'
+     ]
+   }
     // order: [
     //   'startRequestTimer',
     //   'cookieParser',

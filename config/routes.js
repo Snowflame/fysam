@@ -35,6 +35,15 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
+  'get /star': {
+    view: 'homepage'
+  },
+  'get /show/*': {
+    view:"homepage"
+  },
+   'get /show/ria': {
+    view:"homepage"
+  },
   // Angularjs parcials
   'get /views/:file': {
     controller: 'Loadparical',
